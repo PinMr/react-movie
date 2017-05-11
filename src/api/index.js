@@ -29,13 +29,16 @@ export function getHomeComing() {
   return getFilmList(1, 3, 'coming-soon')
 }
 
-//获取热映列表
-export function getNowList(page){
-  return getFilmList(page, 7)
-}
-//获取即将上映列表
-export function getComingList(page){
-  return getFilmList(page, 7, 'coming-soon')
+// //获取热映列表
+// export function getNowList(page){
+//   return getFilmList(page, 7)
+// }
+// //获取即将上映列表
+// export function getComingList(page){
+//   return getFilmList(page, 7, 'coming-soon')
+// }
+export function getFilmPage(page, type){
+  return getFilmList(page, 7, type)
 }
 
 //获取城市列表
