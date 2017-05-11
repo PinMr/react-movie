@@ -38,7 +38,7 @@ class Home extends Component {
     return (
       <div className='now-playing'>
         {nowplayList}
-        <div className='more-button'><Link to={{pathname:'film', query:{type:'now-playing'}}} className='go-more'>更多热映电影</Link></div>
+        <div className='more-button'><Link to='/film/now-playing' className='go-more'>更多热映电影</Link></div>
       </div>
     )
   }
@@ -67,7 +67,7 @@ class Home extends Component {
           <div className="upcoming">即将上映</div>
         </div>
         {comingList}
-        <div className="more-button"><Link to={{pathname:'film',query:{type:'coming-soon'}}}>更多即将上映电影</Link></div>
+        <div className="more-button"><Link to='/film/coming-soon'>更多即将上映电影</Link></div>
       </div>
     )
   }
