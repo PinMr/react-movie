@@ -18,8 +18,7 @@ class SideMenu extends Component {
     return (
       <div
         className={`${sidemenuStatus ? 'show-side ' : ''}sidemenu`}
-        onClick={this.handleClick.bind(this)}
-        ref={sidemenu => this.sidemenu = sidemenu}>
+        onClick={this.handleClick.bind(this)}>
         <ul>
           {sidemenuList.map((item, index) => {
             return (
