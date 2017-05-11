@@ -50,19 +50,19 @@
 /*侧边栏*/
 .sidemenu {
     position:fixed;
-    z-index:19;
     top:50px;
     background:rgba(0,0,0,0.5);
     height:100%;
     width:100%;
-    opacity:1;
+    opacity:0;
+    z-index:19;
 }
 .sidemenu, .sidemenu ul{
     transition:all .4s linear;
 }
 .sidemenu ul {
     position:absolute;
-    width:calc(100% - 110px);
+    width:0;
     background-color:#282828;
     bottom:0;
     top:0;
@@ -87,11 +87,10 @@
     font-size:14px;
 }
 .show-side {
-    opacity:0;
-    display:none;
+    opacity:1;
 }
 .show-side ul{
-    transform:translateX(-70%);
+    width:calc(100% - 110px);
 }
 /*头部*/
 .header{

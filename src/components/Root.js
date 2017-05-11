@@ -12,6 +12,7 @@ import Header from './Header'
 import ArrowButton from './ArrowButton'
 import LoadAnimation from './LoadAnimation'
 import LoadError from './LoadError'
+import SideMenu from './SideMenu'
 
 class Root extends Component {
   constructor() {
@@ -44,6 +45,7 @@ class Root extends Component {
         <Header/>
         <LoadAnimation/>
         <LoadError/>
+        <SideMenu/>
         <CSSTransitionGroup
           component="div"
           className="container"

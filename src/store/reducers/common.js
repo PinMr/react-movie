@@ -34,7 +34,7 @@ export default function commonState(state = initialState, action) {
       }}
     case types.COMMON_SIDEMENU_STATUS:
       return {...state, ...{
-
+          sidemenuStatus: action.status
       }}
     case types.COMMON_CITY:
       return {...state, ...{
