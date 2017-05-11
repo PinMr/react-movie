@@ -1,0 +1,76 @@
+.home {
+    position:relative;
+}
+
+.home .now-playing, .home .coming-soon {
+    padding:.3rem;
+}
+.home .item {
+    background-color:#f9f9f9;
+    overflow: hidden;
+    margin-bottom:10px;
+    box-shadow: .5px .5px 1px #a8a8a8;
+}
+.home a {
+    display:block;
+    overflow: hidden;
+}
+.home .item .desc {
+    overflow: hidden;
+}
+.home .item .desc .info {
+    float:left;
+    padding:10px;
+    padding-top:7px;
+}
+.home .item .desc .info h4{
+    font-weight: normal;
+}
+.home .item .desc .info p{
+    color:#9a9a9a;
+}
+.home .item .desc .count {
+    float:right;
+    line-height: 50px;
+    color:#f78360;
+    margin-right:15px;
+    font-size:18px;
+}
+.home .more-button {
+    width:160px;
+    height:30px;
+    border:1px solid #aaa;
+    border-radius:15px;
+    margin:20px auto;
+    text-align: center;
+    line-height: 30px;
+    font-size:12px;
+    cursor:pointer;
+}
+.more-button a{
+    color:#616161;
+}
+/*即将上映*/
+.coming-line{
+    position:relative;
+    margin-bottom:30px;
+    border-bottom:1px solid #a8a8a8;
+}
+.upcoming{
+    width:65px;
+    height:20px;
+    margin:0 auto;
+    border-radius: 5px;
+    font-size:10px;
+    line-height: 20px;
+    text-align: center;
+    color:#eee;
+    margin-bottom:-10px;
+    background-color: #a7a7a7;
+}
+.home .item .time {
+    float:right;
+    color:#f78360;
+    margin-right:15px;
+    line-height:35px;
+}
