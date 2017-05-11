@@ -7,6 +7,7 @@ export const COMMON_SIDEMENU_STATUS = 'COMMON_SIDEMENU_STATUS' //侧边栏状态
 export const COMMON_TITLE = 'COMMON_TITLE' //标题
 export const COMMON_LOADING_STATUS = 'COMMON_LOADING_STATUS' //加载状态
 export const COMMON_ERROR_STATUS = 'COMMON_ERROR_STATUS' //错误状态
+export const COMMON_CITY_LIST = 'COMMON_CITY_LIST'//所有城市列表
 
 // 首页
 export const HOME_BANNER = 'HOME_BANNER' //首页banner图

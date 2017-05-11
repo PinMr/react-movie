@@ -2,7 +2,8 @@
  * Created by billbear on 2017/5/11.
  */
 import * as types from '../types'
-
+import * as api from '../../api'
+import * as common from './common'
 
 export function changeTitle(title = '卖座电影'){
   document.title = title
@@ -35,9 +36,32 @@ export function changeCity(city) {
   }
 }
 
+
 export function error(status = true) {
   return {
     type: types.COMMON_ERROR_STATUS,
     status
+  }
+}
+
+function changeCityList(data){
+  return {
+    type: types.COMMON_CITY_LIST,
+    data
+  }
+}
+
+export function getCityList(){
+  return dispatch => {
+    dispatch(common.loading(true))
+    api.getCityList()
+        .then(data => {
+          dispatch(changeCityList(data.data.data.cities))
+          dispatch(common.loading(false))
+        })
+        .catch(err => {
+          dispatch(common.error())
+          throw new Error(err)
+        })
   }
 }
