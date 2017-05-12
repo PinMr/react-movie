@@ -19,14 +19,15 @@ const initialState = {
     { name: '卖座卡', url: '/card' }
   ],
   loadStatus: false,
-  errorStatus: false
+  errorStatus: false,
+  cityList: []
 }
 
 export default function commonState(state = initialState, action) {
   switch(action.type) {
     case types.COMMON_TITLE:
       return {...state, ...{
-
+        title: action.title
       }};
     case types.COMMON_LOADING_STATUS:
       return {...state, ...{
@@ -38,12 +39,16 @@ export default function commonState(state = initialState, action) {
       }}
     case types.COMMON_CITY:
       return {...state, ...{
-
+          city: action.city
       }}
     case types.COMMON_ERROR_STATUS:
       return {...state,...{
         errorStatus: action.status
       }}
+      case types.COMMON_CITY_LIST:
+        return {...state,...{
+          cityList: action.data
+        }}
     default:
       return state
   }

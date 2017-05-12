@@ -1,0 +1,102 @@
+
+/*电影*/
+.film{
+    padding:0 15px;
+}
+.film-nav{
+    height:46px;
+    margin:0 auto;
+    border-bottom:1px solid #fe6e00;
+    position:relative;
+    z-index:11;
+}
+.film-nav ul li{
+    float:left;
+    width:50%;
+    height:100%;
+    text-align: center;
+    font-size:16px;
+    line-height: 43px;
+    cursor: pointer;
+}
+.film-nav ul li .choose{
+    color:#fe6e00;
+    border-bottom:solid;
+}
+.film-nav ul li a{
+    display: block;
+}
+.film-item {
+    width:100%;
+    padding:20px 0;
+    border-bottom:1px dashed #c9c9c9;
+    cursor:pointer;
+}
+.film-item-img{
+    width:60px;
+    float:left;
+    overflow: hidden;
+}
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height:auto;
+}
+.film-desc{
+    padding-left:15px;
+    display: inline-block;
+    width:75%;
+}
+.film-next-arrow{
+    float:right;
+    line-height: 29px;
+    color:#c6c6c6;
+}
+.film-next-arrow i{
+    font-size:16px;
+    line-height: 32px;
+    padding-left:10px;
+}
+.film-grade{
+    float:right;
+    font-size:16px;
+    line-height: 32px;
+    color:#fc7103;
+}
+.film-name{
+    font-size:16px;
+    line-height: 32px;
+    color:#000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.film-intro {
+    height:24px;
+    color:#8e8e8e;
+    font-size:12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:100%;
+    display: inline-block;
+}
+.film-counts{
+    line-height: 24px;
+    color:#8e8e8e;
+    font-size:12px;
+}
+.film-count-color{
+    color: #8aa2bf;
+}
+.film-date{
+    color:#ffb375;
+}
+.load-more{
+    height:50px;
+    text-align: center;
+}
+.load-more i{
+    line-height: 50px;
+    font-size:30px;
+}
