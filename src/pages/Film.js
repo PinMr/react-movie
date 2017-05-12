@@ -11,24 +11,43 @@ import LoadFilm from '../components/LoadFilm'
 import '../assets/css/film.css'
 
 class Film extends Component {
-    constructor(){
-        super()
-        this.state = {
-            scrollTop:''
-        }
+    constructor() {
+      super()
+      this.state = {
+        url:null
+      }
     }
     componentWillMount(){
-        this.props.actions.resetFilmList()
-        this.props.actions.fetchFilmList(this.props.page, this.props.params.type)
+      console.log('will mount')
+      this.props.actions.fetchFilmList(this.props.page, this.props.params.type)
     }
-    componentDidMount(){
-        if(this.props.getMore) window.addEventListener('scroll', this.mrGetMore.bind(this))
+    componentDidMount() {
+      window.addEventListener('scroll', this.mrGetMore.bind(this))
+    }
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.params.type !== this.props.params.type) {
+        this.props.actions.resetPage()
+        this.props.actions.resetFilmList()
+        this.setState({url: this.props.params.type})
+      }
+    }
+    shouldComponentUpdate(nextProps, nextState){
+      if(this.state.url !== nextState.url){
+        return false
+      }
+      return true
+    }
+    componentWillUpdate (nextProps) {
+      if (this.state.url && nextProps.params.type !== this.state.url) {
+        this.props.actions.fetchFilmList(nextProps.page, nextProps.params.type)
+        this.setState({url: null})
+      }
     }
     componentWillUnmount() {
-        window.removeEventListener('scroll', this.mrGetMore.bind(this))
+      window.removeEventListener('scroll', this.mrGetMore.bind(this))
     }
     mrGetMore(){
-        if (document.body.scrollTop + window.innerHeight === document.body.scrollHeight){
+        if (document.body.scrollTop + window.innerHeight >= document.body.scrollHeight - 50 && this.props.getMore){
             window.removeEventListener('scroll', this.mrGetMore.bind(this))
             this.props.actions.fetchFilmList(this.props.page, this.props.params.type)
         }

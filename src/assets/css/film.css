@@ -95,8 +95,23 @@
 .load-more{
     height:50px;
     text-align: center;
+    position:relative;
 }
 .load-more i{
     line-height: 50px;
     font-size:30px;
+}
+.load-more .underline {
+    border-bottom:1px solid #ccc;
+    line-height: 30px;
+    height:30px;
+    color:#999;
+    text-align: center;
+}
+.load-more .underline p{
+    position:absolute;
+    top:15px;
+    background: #f9f9f9;
+    left:calc(50% - 52px);
+    padding:0 10px;
 }

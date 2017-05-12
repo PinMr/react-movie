@@ -12,35 +12,38 @@ function filmList(data){
     }
 }
 
-function getMore(){
+function getMore(status){
     return {
-        type: types.CAN_GET_MORE
+        type: types.CAN_GET_MORE,
+        status
     }
 }
 
-function addPage() {
+export function addPage(page) {
     return {
-        type: types.ADD_PAGE
+      type: types.ADD_PAGE,
+      page
     }
 }
 
 export function fetchFilmList(page, type){
     return dispatch => {
-        if (page == 1) dispatch(common.loading(true))
-        dispatch(changeLoading(true))
-        api.getFilmPage(page, type)
+        if (page.current === 1) dispatch(common.loading(true))
+        if (page.total >= page.current) {
+          dispatch(getMore(true))
+          api.getFilmPage(page.current, type)
             .then(data => {
-                    dispatch(addPage())
-                    dispatch(filmList(data.data.data.films))
-                    dispatch(changeLoading(false))
-                    dispatch(common.loading())
-                    // dispatch(getMore())
-                    dispatch(changeLoading(false))
-                    dispatch(common.loading())
+              dispatch(filmList(data.data.data))
+              dispatch(common.loading(false))
+              dispatch(addPage(data.data.data.page))
             })
             .catch(err => {
-                dispatch(common.error(true))
+              if (page.current == 1) dispatch(common.error())
+              dispatch(getMore(false))
             })
+        } else {
+          dispatch(getMore(false))
+        }
     }
 }
 
@@ -52,12 +55,13 @@ export function resetFilmList(){
 
 
 export function resetPage() {
+  console.log('reset page')
     return {
         type: types.RESET_PAGE
     }
 }
 
-export function changeLoading(status) {
+export function changeLoading(status = false) {
     return {
         type: types.FILM_LOADING,
         status
