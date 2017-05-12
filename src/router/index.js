@@ -30,7 +30,7 @@ const Film = (location, cb) => {
 const Detail = (location, cb) => {
   require.ensure([], require => {
     cb(null, require('../pages/Detail').default)
-  }, 'detail');
+  }, 'detail/:name/:id');
 }
 const Cinema = (location, cb) => {
   require.ensure([], require => {
@@ -55,11 +55,11 @@ const RouteConfig = (
   <Router history={history}>
     <Route path='/' component={Root}>
       <IndexRoute component={Home} name='卖座电影'/>
-      <Route path='detail' getComponent={Detail} name='卖座电影'/>
-      <Route path='film/:type' getComponent={Film} name='卖座电影'/>
-      <Route path='cinema' getComponent={Cinema} name='卖座电影'/>
+      <Route path='detail/:name/:id' getComponent={Detail} name='卖座电影'/>
+      <Route path='film/:type' getComponent={Film}/>
+      <Route path='cinema/:name' getComponent={Cinema} name='卖座电影'/>
       <Route path='city' getComponent={City} name='选择城市'/>
-      <Route path='404' getComponent={PageNotFound} name='选择城市'/>
+      <Route path='404' getComponent={PageNotFound} name='卖座电影'/>
       <Redirect from='*' to='/404'/>
     </Route>
   </Router>

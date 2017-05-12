@@ -44,6 +44,12 @@ export function error(status = true) {
   }
 }
 
+export function changeError(status) {
+  return dispatch => {
+    dispatch(error(status))
+  }
+}
+
 function changeCityList(data){
   return {
     type: types.COMMON_CITY_LIST,

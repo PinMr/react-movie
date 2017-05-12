@@ -22,7 +22,7 @@ class Home extends Component {
     for (let [index, item] of nowPlaying.entries()) {
       nowplayList.push(
         <div className='item' key={index}>
-          <Link to={{pathname: 'detail',query:{id:item.id}}}>
+          <Link to={`detail/${item.name}/${item.id}`}>
             <img src={item.cover.origin} alt=""/>
             <div className='desc'>
               <div className='info'>

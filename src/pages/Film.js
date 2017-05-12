@@ -18,7 +18,6 @@ class Film extends Component {
       }
     }
     componentWillMount(){
-      console.log('will mount')
       this.props.actions.fetchFilmList(this.props.page, this.props.params.type)
     }
     componentDidMount() {

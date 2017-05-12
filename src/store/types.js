@@ -21,3 +21,7 @@ export const ADD_PAGE = 'ADD_PAGE' //增加请求page数目
 export const RESET_PAGE = 'RESET_PAGE' //重置page数目
 export const FILM_LOADING = 'FILM_LOADING'//获取电影状态
 export const CAN_GET_MORE = 'CAN_GET_MORE'//是否能能获取更多
+
+//电影详细信息页面
+export const GET_FILM_INFO = 'GET_FILM_INFO' //获取电影信息
+export const CLEAR_FILM_INFO = 'CLEAR_FILM_INFO'//清空电影信息

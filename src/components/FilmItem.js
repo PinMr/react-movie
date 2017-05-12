@@ -36,7 +36,7 @@ class FilmItem extends Component {
                 {this.props.filmList.map((item, index) => {
                     return (
                         <li key={index}>
-                            <Link>
+                            <Link to={`detail/${item.name}/${item.id}`}>
                                 <div className="film-item">
                                     <div className="film-item-img">
                                         <img className="img-responsive" src={item.poster.thumbnail}/>

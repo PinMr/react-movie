@@ -31,6 +31,7 @@ class Root extends Component {
   componentWillReceiveProps(nextProps) {
     this.props.actions.changeTitle(nextProps.routes[1].name)
     this.props.actions.changeSidemenuStatus()
+    this.props.actions.changeError(false)
   }
   mrScrollTop() {
     if (document.body.scrollTop > 200) {

@@ -1,6 +1,6 @@
 
 /*电影*/
-.film{
+.film,.detail .film-detail{
     padding:0 15px;
 }
 .film-nav{
@@ -114,4 +114,47 @@
     background: #f9f9f9;
     left:calc(50% - 52px);
     padding:0 10px;
+}
+
+/*详情*/
+.deatail {
+    overflow: hidden;
+}
+.detail .film-title {
+    margin:16px auto;
+    border-left:16px solid rgb(228,200,156);
+    font-size:16px;
+    padding-left:4px;
+}
+.detail .film-detail .detail-common{
+    height:18px;
+    overflow: hidden;
+    margin-bottom:10px;
+    padding-left:20px;
+    word-break: break-all;
+}
+.detail .film-detail .film-content{
+    text-overflow: ellipsis;
+    margin-bottom:80px;
+    padding-left:20px;
+    padding-right:20px;
+    text-align: justify;
+}
+.detail .operation {
+    position:fixed;
+    left:0;
+    bottom:20px;
+    width:100%;
+    text-align: center;
+}
+.detail .operation button {
+    font-size:14px;
+    min-width:156px;
+    height:36px;
+    line-height: 36px;
+    border:none;
+    background-color: #fe8233;
+    border-radius:18px;
+    color:#fff;
+    transition:.5s ease;
 }
