@@ -29,7 +29,7 @@ class Root extends Component {
     window.addEventListener('scroll', this.mrScrollTop.bind(this))
   }
   componentWillReceiveProps(nextProps) {
-    this.props.actions.changeTitle(nextProps.routes[1].name)
+    if(nextProps.routes[1].name) this.props.actions.changeTitle(nextProps.routes[1].name)
     this.props.actions.changeSidemenuStatus()
     this.props.actions.changeError(false)
   }

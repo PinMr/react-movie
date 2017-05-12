@@ -19,7 +19,6 @@ class Detail extends Component {
   }
   render() {
     let { filmInfo } = this.props
-    console.log(filmInfo)
     if (!filmInfo) return <div></div>
     return (
       <div className="detail">
